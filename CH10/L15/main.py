@@ -36,3 +36,11 @@ class BSTNode:
             self.right.insert(val)
             return
         self.right = BSTNode(val)
+
+if __name__ == "__main__":
+    nodes = list(range(1, 11))
+    tree = BSTNode()
+    for node in nodes:
+        tree.insert(node)
+    height = tree.height()
+    print(height)
