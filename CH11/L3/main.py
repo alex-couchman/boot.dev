@@ -40,3 +40,30 @@ class RBTree:
                 parent.left = new_node
             else:
                 parent.right = new_node
+
+
+def print_tree(node):
+    lines = []
+    format_tree_string(node.root, lines)
+    return "\n".join(lines)
+
+
+def format_tree_string(node, lines, level=0):
+    if node.val is not None:
+        format_tree_string(node.right, lines, level + 1)
+        lines.append(
+            " " * 4 * level
+            + "> "
+            + str(node.val)
+            + " "
+            + ("[red]" if node.red else "[black]")
+        )
+        format_tree_string(node.left, lines, level + 1)
+
+
+if __name__ == "__main__":
+    tree = RBTree()
+    nodes = [4, 2, 6, 1, 3, 5, 7]
+    for node in nodes:
+        tree.insert(node)
+    print(print_tree(tree))
