@@ -29,9 +29,9 @@ import os
 import json
 
 if __name__ == "__main__":
-    lst = ["Jerry", "Jess", "Jeremy"]
+    names = ["Jerry", "Jess", "Jeremy"]
     trie = Trie()
-    for each in lst:
+    for each in names:
         trie.add(each)
     json_output = json.dumps(trie.root, indent=4, sort_keys=True)
     os.system('cls')
