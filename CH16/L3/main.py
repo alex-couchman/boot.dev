@@ -2,7 +2,7 @@ def tsp(cities, paths, dist):
     perms = permutations(cities)
     for perm in perms:
         sum = 0
-        for i in range(len(perm)-1):
+        for i in range(len(perm) - 1):
             curr_city, next_city = perm[i], perm[i+1]
             sum += paths[curr_city][next_city]
         if sum < dist:
